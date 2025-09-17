@@ -20,30 +20,35 @@ public class MyListener implements WebDriverListener {
         logger.info("The test have a problem");
         logger.info("*************************");
 
-        logger.info("Method -->"+ method.getName());
+        logger.info("Method --> "+ method.getName());
         logger.info("*************************");
 
-        logger.info("TargetException -->"+ e.getTargetException());
+        logger.info("TargetException --> "+ e.getTargetException());
         logger.info("*************************");
 
-        logger.info("Object -->"+ target.toString());
+        logger.info("Object --> "+ target.toString());
         logger.info("*************************");
     }
 
     @Override
     public void beforeFindElement(WebElement element, By locator) {
         WebDriverListener.super.beforeFindElement(element, locator);
-
+        logger.info("The locator will find " + locator);
+        logger.info("*************************");
     }
 
     @Override
     public void afterFindElement(WebElement element, By locator, WebElement result) {
         WebDriverListener.super.afterFindElement(element, locator, result);
+        logger.info("The locator is " + locator);
+        logger.info("*************************");
     }
 
     @Override
     public void beforeFindElements(WebElement element, By locator) {
         WebDriverListener.super.beforeFindElements(element, locator);
+        logger.info("Before find elements " + locator);
+        logger.info("*************************");
     }
 
     @Override
@@ -59,5 +64,7 @@ public class MyListener implements WebDriverListener {
     @Override
     public void afterFindElements(WebElement element, By locator, List<WebElement> result) {
         WebDriverListener.super.afterFindElements(element, locator, result);
+        logger.info("List size is " + result.size());
+        logger.info("*************************");
     }
 }

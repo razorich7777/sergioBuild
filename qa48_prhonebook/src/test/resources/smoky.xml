@@ -4,7 +4,11 @@
     <test name="Smoky1">
         <classes>
             <class name="com.phonebook.test"/>
-            <class name="com.phonebook.AddContactTest"/>
+            <class name="com.phonebook.AddContactTest">
+                 <methods>
+                        <exclude name=".*From.*"></exclude>
+                 </methods>
+            </class>
             <class name="com.phonebook.DeleteContactTest"/>
             <class name="com.phonebook.LoginTest">
                 <methods>
